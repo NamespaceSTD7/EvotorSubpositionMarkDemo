@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.softc.evotordemo">
+
+    <application android:label="@string/app_name">
+
+        <!-- Интеграция: событие изменения чека продажи -->
+        <service
+            android:name=".DemoService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="evo.v2.receipt.sell.beforePositionsEdited" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

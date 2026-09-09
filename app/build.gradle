@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 31
+    defaultConfig {
+        applicationId "com.softc.evotordemo"
+        minSdkVersion 23
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation 'com.github.evotor:integration-library:v0.6.32'
+    implementation 'androidx.annotation:annotation:1.5.0'
+}
